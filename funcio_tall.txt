@@ -1,0 +1,20 @@
+def get_cost(C,M,obj,col,visited,items):
+    cost=C[obj][col]
+    col+=1
+    j_temporal=0
+    less=float('inf')
+    
+    for i in range(col,M):
+        for j in range(col,M):
+            if C[i][j]<less and j not in visited and j not in items:
+                    less=C[i][j]
+                    j_temporal=j
+                    
+        visited.append(j_temporal)
+        cost+=less
+        less=float('inf')
+
+    return cost
+
+
+
