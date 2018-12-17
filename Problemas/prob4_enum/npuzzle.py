@@ -88,4 +88,5 @@ class NPuzzle:
         board = self._board
         sol = np.roll(np.arange(board.shape[0]*board.shape[1]),-1).reshape(board.shape)
         return np.sum(board!=sol)
-    
+    def  lt (self,other):
+        return self.manhattan_distance() < other.manhattan_distance()
